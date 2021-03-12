@@ -22,6 +22,10 @@ export default {
                 {
                     "title": "Blog",
                     "href": "/blog"
+                },
+                {
+                    "title": "Create Post",
+                    "href": "/create"
                 }
             ]
         }

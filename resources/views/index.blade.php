@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue Blog</title>
     <link rel="stylesheet" href="{{ asset("uikit-3.6.17/css/uikit.css") }}">
+    <link rel="stylesheet" href="{{ asset("uikit-3.6.17/css/uikit-rtl.css") }}">
 </head>
 <body>
 <div id="app">
