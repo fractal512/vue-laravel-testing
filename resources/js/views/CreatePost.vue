@@ -30,6 +30,7 @@
 
 <script>
 import axios from "axios";
+import routes from "../route";
 
 export default {
     name: "CreatePost",
@@ -45,7 +46,7 @@ export default {
     methods: {
         store(){
             this.loading = true;
-            axios.post('/api/posts', this.form, {
+            axios.post(routes('posts.store'), this.form, {
                 headers: {
                     "Content-type": "application/json"
                 }

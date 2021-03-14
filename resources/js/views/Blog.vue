@@ -18,6 +18,7 @@
 import Spinner from "./Spinner";
 import axios from "axios";
 import ListItem from "../components/Blog/ListItem";
+import routes from "../route";
 
 export default {
     name: "Blog",
@@ -34,7 +35,7 @@ export default {
     },
     methods: {
         loadPosts(){
-            axios.get('/api/posts')
+            axios.get(routes('posts.index'))
             .then(res => {
                 //console.log(res.data);
                 this.posts = res.data.posts; //console.log(res.data.posts, res.data.status);

@@ -1,0 +1,10 @@
+{
+    "posts.index": "api\/posts",
+    "posts.create": "api\/posts\/create",
+    "posts.store": "api\/posts",
+    "posts.show": "api\/posts\/{post}",
+    "posts.edit": "api\/posts\/{post}\/edit",
+    "posts.update": "api\/posts\/{post}",
+    "posts.destroy": "api\/posts\/{post}",
+    "": "{any}"
+}

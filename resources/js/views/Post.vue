@@ -15,6 +15,7 @@
 <script>
 import Spinner from "./Spinner";
 import axios from "axios";
+import routes from "../route";
 
 export default {
     name: "Post",
@@ -31,7 +32,7 @@ export default {
     },
     methods: {
         loadPost(id) {
-            axios.get('/api/posts/'+id)
+            axios.get(routes('posts.show', [id]))
             .then(res => {
                 this.post = res.data.post;
                 setTimeout(() => {

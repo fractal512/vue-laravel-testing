@@ -1,7 +1,7 @@
-import vueRouter from 'vue-router';
+import VueRouter from 'vue-router';
 import Vue from 'vue';
 
-Vue.use(vueRouter);
+Vue.use(VueRouter);
 
 import Index from "./views/Index";
 import Blog from "./views/Blog";
@@ -27,7 +27,7 @@ const routes = [
     }
 ];
 
-export default new vueRouter({
+export default new VueRouter({
     mode: "history",
     routes: routes
 });

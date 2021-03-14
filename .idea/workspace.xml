@@ -12,6 +12,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1277b9e7-ae55-435e-b39a-0c5d1ad60b85" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/Blog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/Blog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/CreatePost.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/CreatePost.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/Post.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/Post.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +181,9 @@
       <workItem from="1615406286635" duration="1221000" />
       <workItem from="1615410681820" duration="34221000" />
       <workItem from="1615541665029" duration="4709000" />
+      <workItem from="1615557886465" duration="902000" />
+      <workItem from="1615671344761" duration="1305000" />
+      <workItem from="1615733204345" duration="2964000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1615413050331</created>
@@ -198,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615545154889</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Readme update">
+      <created>1615558568493</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615558568493</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,12 +235,17 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Vue.js setup" />
     <MESSAGE value="Blog created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Blog created" />
+    <MESSAGE value="Readme update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Readme update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="477" y="264" key="NewPhpFileDialog" timestamp="1615454166806">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1615454166806" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1615558602620">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1615558602620" />
   </component>
 </project>

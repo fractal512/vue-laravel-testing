@@ -2000,6 +2000,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Blog_ListItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Blog/ListItem */ "./resources/js/components/Blog/ListItem.vue");
+/* harmony import */ var _route__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../route */ "./resources/js/route.js");
 //
 //
 //
@@ -2016,6 +2017,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 
@@ -2038,7 +2040,7 @@ __webpack_require__.r(__webpack_exports__);
     loadPosts: function loadPosts() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/posts').then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default().get((0,_route__WEBPACK_IMPORTED_MODULE_3__.default)('posts.index')).then(function (res) {
         //console.log(res.data);
         _this.posts = res.data.posts; //console.log(res.data.posts, res.data.status);
 
@@ -2065,6 +2067,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _route__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../route */ "./resources/js/route.js");
 //
 //
 //
@@ -2095,6 +2098,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "CreatePost",
@@ -2114,7 +2118,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.loading = true;
-      axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/posts', this.form, {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post((0,_route__WEBPACK_IMPORTED_MODULE_1__.default)('posts.store'), this.form, {
         headers: {
           "Content-type": "application/json"
         }
@@ -2177,6 +2181,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Spinner__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Spinner */ "./resources/js/views/Spinner.vue");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _route__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../route */ "./resources/js/route.js");
 //
 //
 //
@@ -2191,6 +2196,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2212,7 +2218,7 @@ __webpack_require__.r(__webpack_exports__);
     loadPost: function loadPost(id) {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/posts/' + id).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default().get((0,_route__WEBPACK_IMPORTED_MODULE_2__.default)('posts.show', [id])).then(function (res) {
         _this.post = res.data.post;
         setTimeout(function () {
           _this.loading = false;
@@ -2335,6 +2341,39 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/route.js":
+/*!*******************************!*\
+  !*** ./resources/js/route.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var routes = __webpack_require__(/*! ./routes.json */ "./resources/js/routes.json");
+
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {
+  var args = Array.prototype.slice.call(arguments); // arguments - аргументы, переданные в функцию
+
+  var name = args.shift();
+
+  if (routes[name] === undefined) {
+    console.log('Error: route "' + name + '" doesn\'t exist');
+  } else {
+    return '/' + routes[name].split('/').map(function (str) {
+      if (str[0] == '{') {
+        return args.shift();
+      } else {
+        return str;
+      }
+    }).join('/');
+  }
+}
 
 /***/ }),
 
@@ -54591,6 +54630,17 @@ Vue.compile = compileToFunctions;
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Vue);
 
+
+/***/ }),
+
+/***/ "./resources/js/routes.json":
+/*!**********************************!*\
+  !*** ./resources/js/routes.json ***!
+  \**********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"posts.index":"api/posts","posts.create":"api/posts/create","posts.store":"api/posts","posts.show":"api/posts/{post}","posts.edit":"api/posts/{post}/edit","posts.update":"api/posts/{post}","posts.destroy":"api/posts/{post}","":"{any}"}');
 
 /***/ })
 
