@@ -11,21 +11,30 @@
 </template>
 
 <script>
+import Lang from "../lang";
 export default {
     data() {
         return {
             links: [
                 {
-                    "title": "Home",
+                    "title": Lang.get('blog.home'),
                     "href": "/"
                 },
                 {
-                    "title": "Blog",
+                    "title": Lang.get('blog.blog'),
                     "href": "/blog"
                 },
                 {
-                    "title": "Create Post",
+                    "title": Lang.get('blog.create-post'),
                     "href": "/create"
+                },
+                {
+                    "title": Lang.get('blog.example', {id : '1'}),
+                    "href": "/"
+                },
+                {
+                    "title": Lang.choice('blog.plural', 2, {id : '2'}),
+                    "href": "/"
                 }
             ]
         }
